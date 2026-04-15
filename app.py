@@ -1,6 +1,5 @@
 import os
 import numpy as np
-import cv2
 import gradio as gr
 import kagglehub
 from tensorflow.keras import layers, models
@@ -94,7 +93,7 @@ def predict_image(image):
     # ✅ LOAD CLASS NAMES
     class_names = np.load(CLASS_FILE, allow_pickle=True)
 
-    img = cv2.resize(image, (128,128))
+  
     img = img / 255.0
     img = np.expand_dims(img, axis=0)
 
